@@ -38,7 +38,7 @@ public class TambahTeman extends AppCompatActivity {
                     nm = edNama.getText().toString();
                     tlp = edTelpon.getText().toString();
 
-                    submitTeman(new Teman(nm,tlp));
+                    submitTeman(new Teman(nm, tlp));
 
                 }
                 else

@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.firebase.AdapterLiharTeman.AdapterLihatTeman;
-import com.example.firebase.AdapterLiharTeman.AdapterLihatTeman;
+import com.example.firebase.adapter.AdapterLihatTeman;
 import com.example.firebase.database.Teman;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
