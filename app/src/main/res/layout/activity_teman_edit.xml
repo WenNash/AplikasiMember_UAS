@@ -13,7 +13,7 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Edit Teman"
+        android:text="Edit"
         android:textSize="10pt"/>
 
     <LinearLayout
@@ -47,14 +47,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Nama Teman"
+        android:hint="Nama"
         android:padding="10dp"/>
     <EditText
         android:id="@+id/edTelpon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Telpon Teman"
+        android:hint="Nomor Telpon"
         android:padding="10dp"/>
     <Button
         android:id="@+id/btEdit"
@@ -62,6 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:text="Edit Teman"/>
+        android:text="Edit"/>
 
 </LinearLayout>

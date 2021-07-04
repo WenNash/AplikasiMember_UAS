@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.firebase.adapter.AdapterLihatTeman;
@@ -55,5 +57,9 @@ public class LihatTeman extends AppCompatActivity {
                 System.out.println(error.getDetails()+""+error.getMessage());
             }
         });
+    }
+    public static Intent getActIntent(Activity activity)
+    {
+        return new Intent(activity, LihatTeman.class);
     }
 }
