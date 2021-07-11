@@ -26,6 +26,7 @@ public class LihatTeman extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Teman> dataTeman;
 
+    //perintah untuk menampilan data member
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

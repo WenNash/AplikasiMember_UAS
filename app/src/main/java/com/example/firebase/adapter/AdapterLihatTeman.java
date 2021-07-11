@@ -30,18 +30,18 @@ public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.Vi
     private  ArrayList<Teman> daftarTeman;
     private  Context context;
     private DatabaseReference databaseReference;
-
+//perintah untuk menghapus data
     public void DeleteData(String kode){
         if (databaseReference != null) {
             databaseReference.child("Teman").child(kode).removeValue();
         }
     }
-
+//perintah untuk melihat data
     public AdapterLihatTeman(ArrayList<Teman> daftarTeman, Context context) {
         this.daftarTeman = daftarTeman;
         this.context = context;
     }
-
+//perintah untuk menampilan nama
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvNama;
 
@@ -60,7 +60,7 @@ public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.Vi
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
-
+//perintah untuk menampilkan data member
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String kode, nama, telpon;
@@ -71,12 +71,14 @@ public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.Vi
 
         holder.tvNama.setText(nama);
         holder.tvNama.setOnLongClickListener(new View.OnLongClickListener() {
+            //perintah untuk memunculkan menu
             @Override
             public boolean onLongClick(View v) {
                 PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
                 popupMenu.inflate(R.menu.popup1);
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    //perintah untuk edit data
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId())
@@ -92,12 +94,13 @@ public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.Vi
                                 v.getContext().startActivity(intent);
 
                             break;
-
+                            //perintah untuk menghapus data
                             case R.id.mnHapus:
                                 AlertDialog.Builder alertDlg = new AlertDialog.Builder(v.getContext());
                                 alertDlg.setTitle("Yakin data" + nama+ "akan dihapus?");
                                 alertDlg.setMessage("Tekan 'Ya' untuk menghapus")
                                         .setCancelable(false)
+                                        //perintah untuk mengganti nama
                                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
@@ -108,6 +111,7 @@ public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.Vi
                                                 v.getContext().startActivity(intent);
                                             }
                                         })
+                                        //perintah untuk batal mengganti nama
                                         .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {

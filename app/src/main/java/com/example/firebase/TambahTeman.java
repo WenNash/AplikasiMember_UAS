@@ -19,6 +19,7 @@ public class TambahTeman extends AppCompatActivity {
     private DatabaseReference database;
     String nm, tlp;
 
+    //perintah untuk menambahkan data member
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class TambahTeman extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance().getReference();
 
+        //perintah untuk menyimpan data member
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,13 +43,14 @@ public class TambahTeman extends AppCompatActivity {
                     submitTeman(new Teman(nm, tlp));
 
                 }
+                //perintah untuk menginformasikan jika data tidak boleh kosong
                 else
                     Toast.makeText(TambahTeman.this, "Data tidak boleh kosong",Toast.LENGTH_SHORT).show();
 
 
             }
         });
-
+    //perintah untuk menginformasikan jika data berhasil ditambahkan
     }
     private void  submitTeman(Teman tmn){
         database.child("Teman").push().setValue(tmn).addOnSuccessListener(this, new OnSuccessListener<Void>() {

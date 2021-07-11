@@ -21,6 +21,8 @@ public class TemanEdit extends AppCompatActivity {
     Button btnEdit;
     DatabaseReference databaseReference;
     String kode, nama, telpon;
+
+    //perintah untuk mengedit data member
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class TemanEdit extends AppCompatActivity {
         ed_Nama.setText(nama);
         ed_telpon.setText(telpon);
 
-
+        //perintah untuk fungsi button edit
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +53,7 @@ public class TemanEdit extends AppCompatActivity {
             }
         });
     }
+    //perintah untuk memberitahu jika data berhasil di ubah
     public void editTeman(Teman teman){
         databaseReference.child("Teman")
                 .child(kode)
